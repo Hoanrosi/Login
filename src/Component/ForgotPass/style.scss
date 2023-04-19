@@ -18,14 +18,15 @@
    letter-spacing: 1.15px;
 
 }
-
-.description{
+.font-noto{
     font-family: 'Noto Sans JP';
-    align-items: center;
     font-style: normal;
-    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
+}
+.description{
+    align-items: center;
+    font-weight: 400;
     text-align: center;
     color: #1D1D1D;
     margin:  0 20px 0 20px;
@@ -35,10 +36,6 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-family: 'Noto Sans JP';
-    font-style: normal;
-    font-size: 16px;
-    line-height: 150%;
     width: 100%; 
 
 

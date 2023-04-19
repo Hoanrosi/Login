@@ -5,10 +5,10 @@ function ForgotPass({handleCancel,handleSend}) {
   return (
     <div className="form-forgotpass">
       <div className="heading">Forgot password</div>
-      <div className="description">
+      <div className="description font-noto">
         Please enter your email address to receive a temporary password.{" "}
       </div>
-      <div className="form-forgot">
+      <div className="form-forgot font-noto">
         <label className="label-form">
           Email <span className="start">*</span>
         </label>

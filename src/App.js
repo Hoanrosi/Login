@@ -3,6 +3,7 @@ import Layout from "./Component/Layout";
 import Login from "./Component/Login";
 import ForgotPass from "./Component/ForgotPass";
 import NewPassword from "./Component/NewPassword";
+import Errors from "./Component/Errors";
 
 function App() {
   const [pageType, setPageType] = useState("login");
@@ -66,7 +67,7 @@ function App() {
 
   //=============== handleSend======================
   const handleSend = () => {
-    setPageType("create_newpass")
+    setPageType("create_newpass");
   };
   let content;
   switch (pageType) {

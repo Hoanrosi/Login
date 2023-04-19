@@ -1,15 +1,22 @@
 import React from "react";
 import "./styles.scss";
 import icon from "../image/Icon.svg";
+import renderErrors from "../Errors";
 
 function Login(props) {
-  const { handleSubmit, formValues, handleChange, formErrors,handleForgotPassword } = props;
+  const {
+    handleSubmit,
+    formValues,
+    handleChange,
+    formErrors,
+    handleForgotPassword,
+  } = props;
   return (
     <div className="login">
       <div className="heading">Login</div>
       <div className="form-information">
         <div className="infor-item">
-          <label className="item-label">
+          <label className=" font-noto item-label">
             Account name <span className="start">*</span>
           </label>
           <input
@@ -20,33 +27,34 @@ function Login(props) {
             value={formValues.accountName}
             onChange={handleChange}
           />
-          {formErrors.accountName && (
-            <div style={{ color: "red" }}>{formErrors.accountName}</div>
-          )}
+          {renderErrors(formErrors.accountName)}
         </div>
 
         <div className="infor-item">
-          <label className="item-label">
+          <label className=" font-noto item-label">
             Password <span className="start">*</span>
           </label>
           <div className="input-wrapper">
             <input
               className="item-input"
               type="password"
-              placeholder="input password"
+              placeholder="Input password"
               name="password"
               value={formValues.password}
               onChange={handleChange}
             />
             <img className="suffix-icon" src={icon} />
           </div>
-          {formErrors.password && (
-            <div style={{ color: "red" }}>{formErrors.password}</div>
-          )}
+          {renderErrors(formErrors.password)}
         </div>
-        <div className="forgot-password" onClick={handleForgotPassword}>Forgot password</div>
+        <div
+          className="forgot-password font-noto"
+          onClick={handleForgotPassword}
+        >
+          Forgot password
+        </div>
       </div>
-      <div className="button" onClick={handleSubmit}>
+      <div className="button font-noto" onClick={handleSubmit}>
         Login
       </div>
     </div>

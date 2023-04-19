@@ -1,7 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital@0;1&family=Noto+Sans+JP:wght@400;500;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@200&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 .login{
     display: flex;
     flex-direction: column;
@@ -28,12 +26,16 @@
     flex-direction: column;
     margin-top: 40px;
 }
+//================= font-family=======================
+.font-noto{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-size: 16px;
+}
 .item-label{
     color: #1D1D1D;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 .item-input{
     outline: none;
@@ -66,20 +68,13 @@
 .forgot-password{
     text-decoration-line: underline;
     color: #FF9505;
-    font-family: 'Noto Sans JP';
-    font-style: normal;
     font-weight: 400;
-    font-size: 16px; 
     margin-top: 12px;
     text-underline-offset: 4px; // khoảng cách underline cách chữ
 }
 
 .button{
-    font-family: 'Noto Sans JP';
-    font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
     text-align: center;
     color: #FFFFFF;
     background: #FF9505;
