@@ -1,52 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.scss";
-import icon from "../image/Icon.svg";
-import renderErrors from "../Errors";
+import InputForm from "../InputForm";
 
 function Login(props) {
-  const {
-    handleSubmit,
-    formValues,
-    handleChange,
-    formErrors,
-    handleForgotPassword,
-  } = props;
+  const { handleForgotPassword, handleTransfer } = props;
+  const [formValues, setFormValues] = useState({
+    accountName: "",
+    password: "",
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    accountName: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues((pre) => ({ ...pre, [name]: value }));
+    validateForm(); // kiểm tra giá trị mới và xóa thông báo lỗi nếu thấy hợp lệ
+  };
+
+  //=================== validateForm===============
+  const validateForm = () => {
+    let errors = {};
+    let isValid = true;
+
+    if (!formValues.accountName) {
+      errors.accountName = "Please enter account name";
+      isValid = false;
+    }
+
+    if (!formValues.password) {
+      errors.password = "Please enter password";
+      isValid = false;
+    }
+
+    setFormErrors(errors);
+
+    return isValid;
+  };
+  //============== handleSubmitForm===================
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const isValid = validateForm();
+    if (isValid) {
+      // Reset lại giá trị của form
+      setFormValues({ accountName: "", password: "" });
+
+      // Xóa thông báo lỗi
+      setFormErrors({});
+
+      handleTransfer()
+    }
+  };
+
   return (
     <div className="login">
       <div className="heading">Login</div>
       <div className="form-information">
-        <div className="infor-item">
-          <label className=" font-noto item-label">
-            Account name <span className="start">*</span>
-          </label>
-          <input
-            className="item-input"
-            type="text"
-            placeholder="Email@example.com"
-            name="accountName"
-            value={formValues.accountName}
-            onChange={handleChange}
-          />
-          {renderErrors(formErrors.accountName)}
-        </div>
+        <InputForm
+          nameLabel=" Account name"
+          nameInput="accountName"
+          required
+          value={formValues.accountName}
+          typeInput="text"
+          error={formErrors.accountName}
+          handleChange={handleChange}
+        />
 
-        <div className="infor-item">
-          <label className=" font-noto item-label">
-            Password <span className="start">*</span>
-          </label>
-          <div className="input-wrapper">
-            <input
-              className="item-input"
-              type="password"
-              placeholder="Input password"
-              name="password"
-              value={formValues.password}
-              onChange={handleChange}
-            />
-            <img className="suffix-icon" src={icon} />
-          </div>
-          {renderErrors(formErrors.password)}
-        </div>
+        <InputForm
+          nameLabel="Password"
+          nameInput="password"
+          required
+          value={formValues.password}
+          typeInput="password"
+          error={formErrors.password}
+          handleChange={handleChange}
+        />
+
         <div
           className="forgot-password font-noto"
           onClick={handleForgotPassword}
@@ -54,7 +85,7 @@ function Login(props) {
           Forgot password
         </div>
       </div>
-      <div className="button font-noto" onClick={handleSubmit}>
+      <div className="button font-noto" onClick={handleLogin}>
         Login
       </div>
     </div>

@@ -1,0 +1,385 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+.profile{
+    display: flex;
+    width: 100%;
+
+}
+// Profile brief
+.profile-brief{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 24px;
+    width:274px;
+    background-color: #fff;
+    box-shadow: 0px 4px 20px rgba(124, 123, 122, 0.1);
+    border-radius: 8px;
+    // min-height: calc(100vh - 170px);
+}
+
+.flex-start{
+    
+}
+
+.flex-end{
+   
+    
+}
+.profile-brief-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profile-avata{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    
+    
+
+}
+.profile-image{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.profile-icon-camera{
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+
+}
+
+.profile-name{
+    font-family: 'Noto Sans JP';
+    margin-top: 4px;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+
+}
+
+.profile-rank{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+    img{
+        margin-right: 16px;
+        width: 23px;
+        height: 33px;
+        object-fit:cover;
+        margin-top: -3px;
+    }
+
+}
+
+.profile-score{
+    font-family: 'Noto Sans JP';
+    font-weight: 700;
+    font-size: 28px;
+    color: #B56A04;
+}
+
+.profile-infor{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+.profile-info-item{
+
+    display: flex;
+    margin-bottom: 12px;
+}
+.profile-info-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    object-fit: contain;
+
+
+}
+
+.profile-info-value{
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+    font-size: 16px;
+    color: #1D1D1D;
+
+
+}
+
+.border{
+    height: 1px;
+    background: #D9D9D9;
+    margin-bottom: 12px;
+
+}
+
+.profile-nick-name-all{
+    display: flex;
+    flex-direction: column;
+}
+.profile-nick-name{
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
+    font-size: 16px;
+    color: #1D1D1D;
+
+}
+
+.nick-name{
+
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 12px;
+}
+
+.profile-infor-password{
+    text-align: center;
+    color: #FF9505;
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+}
+
+
+// profile-detail
+
+.profile-detail{
+    width: calc(100% - 274px);
+    margin-left: 20px;
+}
+
+
+.profile-detail-top{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px;
+    height: 174px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 20px rgba(124, 123, 122, 0.1);
+    border-radius: 8px;
+}
+
+.profile-detail-top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-detail-heading{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color:#1D1D1D;
+  
+}
+.profile-detail-iconCheck{
+    width: 24px;
+    height: 24px;
+}
+
+.profile-detail-top-content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.profile-detail-top-info{
+    display: flex;
+
+}
+
+.top-info-title{
+    width: 500px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color:#1D1D1D;
+   
+
+    .top-info-value{
+        font-weight: 400;
+        margin-left: 12px;
+    }
+}
+
+
+.profile-detail-center{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px;
+    background-color: #fff;
+    box-shadow: 0px 4px 20px rgba(124, 123, 122, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-detail-center-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-detail-bottom{
+    background-color: #fff;
+    box-shadow: 0px 4px 20px rgba(124, 123, 122, 0.1);
+    border-radius: 8px;
+}
+
+.profile-detail-center-heading{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #1D1D1D;
+    margin-bottom: 16px;
+}
+
+.profile-detail-center-content, .profile-detail-center-part{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-detail-info-domain{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #828282;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.detail-center-info-part{
+    display: flex;
+}
+
+
+.info-skill,.info-level{
+    width: 500px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1D1D1D;
+
+    span{
+        margin-left: 12px;
+    }
+}
+
+.proflie-detail-line{
+    width: 100%;
+    height: 1px;
+    background: #D9D9D9;
+    margin: 16px 0;
+}
+
+.profile-detail-info-languages{
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
+    font-size: 16px;
+    color: #828282;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+
+.profile-detail-info-part{
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
+    font-size: 16px;
+    color: #1D1D1D;
+
+    span{
+        font-weight: 400;
+        margin-left: 12px;
+    }
+}
+
+
+// profile-detail-bottom
+.profile-detail-bottom{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px;
+    border-radius: 8px;
+}
+
+.profile-detail-bottom-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.profile-detail-bottom-heading{
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
+    font-size: 20px;
+    color: #1D1D1D;
+    margin-bottom: 16px;
+}
+
+.profile-detail-bottom-content,.profile-detail-bottom-part{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-deatial-bottom-info{
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
+    font-size: 16px;
+    color: #828282;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.detail-info-cv{
+    display: flex;
+   
+     .info-cv{
+        width: 47px;
+        font-family: 'Noto Sans JP';
+        font-weight: 500;
+        font-size: 16px;
+        color: #1D1D1D;
+     }
+
+     .info-link-cv{
+        font-family: 'Noto Sans JP';
+        font-weight: 400;
+        font-size: 16px;
+        color: #0569FF;
+        margin-left: 12px;
+     }
+}
+
+.profile-detail-line{
+    height: 1px;
+    width: 100%;
+    background: #D9D9D9;
+    margin: 16px 0;
+}
+
+.detail-info-note{
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+    font-size: 16px;
+    color: #1D1D1D;
+}

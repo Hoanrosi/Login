@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
 
 }
 
@@ -18,48 +17,20 @@
    letter-spacing: 1.15px;
 
 }
-.font-noto{
-    font-family: 'Noto Sans JP';
-    font-style: normal;
-    font-size: 16px;
-    line-height: 1.5;
-}
+
 .description{
     align-items: center;
     font-weight: 400;
     text-align: center;
     color: #1D1D1D;
-    margin:  0 20px 0 20px;
+    margin-top: 40px;
 }
 
 .form-forgot{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 100%; 
 
-
-}
-.label-form{
-    font-weight: 500;
-    color: #1D1D1D;
-}
-.start{
-    color: #FE2E27;
-}
-.input-form{
-    font-weight: 400;
-    width: 100%;
-    border: none;
-    border: 1px solid #D9D9D9;
-    border-radius: 4px;
-    outline: none;
-    padding: 10px 16px;
-    
-}
-
-.input::placeholder{
-    color: #ccc;
 }
 
 .btn-form{
@@ -67,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
 }
 
 .btn{

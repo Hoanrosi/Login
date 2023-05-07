@@ -2,7 +2,7 @@ import React from "react";
 import image from "../image/bg-login.jpg";
 import "./styles.scss";
 
-function Layout({children,...props}) {
+function AuthenLayout({children,...props}) {
   return (
     <div className="wrapper">
       <div className="container">
@@ -12,4 +12,4 @@ function Layout({children,...props}) {
   );
 }
 
-export default Layout;
+export default AuthenLayout;

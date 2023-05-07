@@ -13,7 +13,6 @@
     font-size: 36px;
     letter-spacing: 1.15px;
     font-style: normal;
-
 }
 
 .form-information{
@@ -21,49 +20,7 @@
     display: flex;
     flex-direction: column;
 }
-.infor-item{
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
-}
-//================= font-family=======================
-.font-noto{
-    font-family: 'Noto Sans JP';
-    font-style: normal;
-    font-size: 16px;
-}
-.item-label{
-    color: #1D1D1D;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-.item-input{
-    outline: none;
-    border-style: none;
-    border: 1px solid #CCCCCC;
-    padding: 10px;
-    border-radius: 5px;
-    
-}
-.start{
-    color: #FE2E27;
-}
-.input-wrapper{
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    height: 40px;
-    border: 1px solid #CCCCCC;
-    .item-input{
-        border-style:none;
-    }
-}
 
-.suffix-icon{
-    margin-left: auto;
-    padding: 15px;
-}
 
 .forgot-password{
     text-decoration-line: underline;

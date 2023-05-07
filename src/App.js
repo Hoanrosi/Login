@@ -1,100 +1,96 @@
 import React, { useState } from "react";
-import Layout from "./Component/Layout";
+import AuthenLayout from "./Component/Layout/Authen";
+import AppLayout from "./Component/Layout/AppLayout";
 import Login from "./Component/Login";
 import ForgotPass from "./Component/ForgotPass";
 import NewPassword from "./Component/NewPassword";
-import Errors from "./Component/Errors";
+import MyProfile from "./Component/Profile";
+import ResourceManage from "./Component/ResourceManage";
+import { PAGE_TYPE } from "./variables/variables";
 
 function App() {
-  const [pageType, setPageType] = useState("login");
-  const [formValues, setFormValues] = useState({
-    accountName: "",
-    password: "",
-  });
-
-  const [formErrors, setFormErrors] = useState({
-    accountName: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues((pre) => ({ ...pre, [name]: value }));
-    validateForm(); // kiểm tra giá trị mới và xóa thông báo lỗi nếu thấy hợp lệ
-  };
-
-  //=================== validateForm===============
-  const validateForm = () => {
-    let errors = {};
-    let isValid = true;
-
-    if (!formValues.accountName) {
-      errors.accountName = "Please enter account name";
-      isValid = false;
-    }
-
-    if (!formValues.password) {
-      errors.password = "Please enter password";
-      isValid = false;
-    }
-
-    setFormErrors(errors);
-
-    return isValid;
-  };
-  //============== handleSubmitForm===================
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const isValid = validateForm();
-    if (isValid) {
-      // Reset lại giá trị của form
-      setFormValues({ accountName: "", password: "" });
-
-      // Xóa thông báo lỗi
-      setFormErrors({});
-    }
-  };
+  const [pageType, setPageType] = useState(PAGE_TYPE.LOGIN);
 
   //================== handleForgotPassword===========
   const handleForgotPassword = () => {
-    setPageType("forgot_Password");
+    setPageType(PAGE_TYPE.FORGOT_PASSWORD);
   };
 
   //===============handleCancel==================
   const handleCancel = () => {
-    setPageType("login");
+    setPageType(PAGE_TYPE.LOGIN);
   };
 
-  //=============== handleSend======================
-  const handleSend = () => {
-    setPageType("create_newpass");
+  const handleSubmit = () => {
+    setPageType(PAGE_TYPE.CREATE_PASSWORD);
   };
-  let content;
-  switch (pageType) {
-    case "login":
-      content = (
-        <Login
-          handleSubmit={handleSubmit}
-          formValues={formValues}
-          handleChange={handleChange}
-          formErrors={formErrors}
-          handleForgotPassword={handleForgotPassword}
-        />
-      );
-      break;
-    case "forgot_Password":
-      content = (
-        <ForgotPass handleCancel={handleCancel} handleSend={handleSend} />
-      );
-      break;
 
-    case "create_newpass":
-      content = <NewPassword />;
-      break;
-  }
+  const handleTransfer = () => {
+    setPageType(PAGE_TYPE.MYPROFILE);
+  };
+
+  const handleResourceManage = () => {
+    setPageType(PAGE_TYPE.RESOURCE_MANAGEMENT);
+  };
+  // let content;
+  // switch (pageType) {
+  //   case PAGE_TYPE.LOGIN:
+  //     content = (
+  //       <AuthenLayout>
+  //         <Login
+  //           handleForgotPassword={handleForgotPassword}
+  //           handleTransfer={handleTransfer}
+  //         />
+  //         ;
+  //       </AuthenLayout>
+  //     );
+
+  //     break;
+  //   case PAGE_TYPE.FORGOT_PASSWORD:
+  //     content = (
+  //       <AuthenLayout>
+  //         <ForgotPass
+  //           handleCancel={handleCancel}
+  //           setPageType={setPageType}
+  //           handleSubmit={handleSubmit}
+  //         />
+  //       </AuthenLayout>
+  //     );
+  //     break;
+
+  //   case PAGE_TYPE.CREATE_PASSWORD:
+  //     content = (
+  //       <AuthenLayout>
+  //         <NewPassword />;
+  //       </AuthenLayout>
+  //     );
+
+  //     break;
+  //   case PAGE_TYPE.MYPROFILE:
+  //     content = (
+  //       <AppLayout
+  //         title="My Profile"
+  //         handleResourceManage={handleResourceManage}
+  //       >
+  //         <MyProfile />
+  //       </AppLayout>
+  //     );
+  //     break;
+
+  //   case PAGE_TYPE.RESOURCE_MANAGEMENT:
+  //     content = (
+  //       <AppLayout title="Resource Management">
+  //         <ResourceManage />
+  //       </AppLayout>
+  //     );
+  //     break;
+  // }
+  // return <div className="App">{content}</div>;
   return (
     <div className="App">
-      <Layout>{content}</Layout>
+      <AppLayout title="Resource Management">
+        <ResourceManage />
+      </AppLayout>
     </div>
   );
 }

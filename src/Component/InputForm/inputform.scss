@@ -1,0 +1,38 @@
+.infor-item{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.item-label{
+    color: #1D1D1D;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.item-input{
+    outline: none;
+    border-style: none;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+.start{
+    color: #FE2E27;
+}
+.input-wrapper{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 40px;
+    border: 1px solid #CCCCCC;
+    .item-input{
+        border-style:none;
+    }
+}
+
+.suffix-icon{
+    margin-left: auto;
+    padding: 15px;
+}

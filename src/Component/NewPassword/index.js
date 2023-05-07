@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
-import icon from "../image/Icon.svg";
-function NewPassword() {
+import InputForm from "../InputForm";
+function NewPassword({ isPasswordVisible, togglePassword }) {
   return (
     <div className="create-new-password">
       <div className="heading">Create new password</div>
@@ -10,34 +10,33 @@ function NewPassword() {
         to get it, then create new password.{" "}
       </div>
       <div className="form-create">
-        <div className="form-item">
-          <lable className="lable-form">
-            Password <span>*</span>
-          </lable>
-          <div className="form-input">
-            <input placeholder="Input password" className="input-item" />
-            <img className="suffix-icon" src={icon} />
-          </div>
-          <div className="resend-password">Resend password </div>
-        </div>
-        <div className="form-item">
-          <lable className="lable-form">
-            New password<span>*</span>
-          </lable>
-          <div className="form-input">
-            <input placeholder="Input new  password" className="input-item" />
-            <img className="suffix-icon" src={icon} />
-          </div>
-        </div>
-        <div className="form-item">
-          <lable className="lable-form">
-            Confirm new password <span>*</span>
-          </lable>
-          <div className="form-input">
-            <input placeholder="Confirm new password" className="input-item" />
-            <img className="suffix-icon" src={icon} />
-          </div>
-        </div>
+        <InputForm
+          nameLabel="Password"
+          nameInput="password"
+          required
+          typeInput="password"
+          isPasswordVisible={isPasswordVisible}
+          togglePassword={togglePassword}
+        />
+
+        <div className="resend-password">Resend password </div>
+        <InputForm
+          nameLabel="New password"
+          nameInput="newPassword"
+          required
+          typeInput="password"
+          isPasswordVisible={isPasswordVisible}
+          togglePassword={togglePassword}
+        />
+        <InputForm
+          nameLabel="Confirm new password "
+          nameInput="confirmPassword"
+          required
+          typeInput="password"
+          isPasswordVisible={isPasswordVisible}
+          togglePassword={togglePassword}
+        />
+
         <div className="btn-form">
           <button className="btn btn-cancel">Cancel</button>
           <button className="btn btn-save">Save</button>

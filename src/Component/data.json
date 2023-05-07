@@ -1,0 +1,31 @@
+
+    {
+        "id" : "0844",
+        "name": "Chloe Han",
+        "image" : "https://img.chelseafc.com//image/upload/f_auto,w_1440,c_fill,g_faces,q_90/chelsea-app/Mount-stock-GettyImages-1181096177.jpg",
+        "score": 540,
+        "gender" : "female",
+        "birthday" : "10/10/2000",
+        "phone": "0123456789",
+        "email":"Chloe@vmodev.com",
+        "date-start": "12/12/2022",
+        "date-end" : "---",
+        "experiences" : 2.5,
+        "work-status": "Active",
+        "skill" : [
+            {
+                "skill_1" : "BA",
+                "level_1" : " Middle"
+            },
+            {
+                "skill_1" : "PO",
+                "level_1" : "Senior"
+            }
+        ],
+        "languages" : ["TOEIC", " Japanese","Others"],
+        "CV-EN" : "https://www.topcv.vn/xem-cv/UldTAQdWDwQCUgdWAVFfDgoEVAQAVFgFDwMFUgba68",
+        "CV-JP" : "https://wwwtopcv.vn/xem-cv/skjfa",
+        "CV-VN" : "https://wwwtopcv.vn/xem-cv/sjnfaiwpdfgaS"
+
+
+    }
