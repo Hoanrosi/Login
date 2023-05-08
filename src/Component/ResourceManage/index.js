@@ -19,7 +19,11 @@ function ResourceManage() {
   const [isSkillUpArrow, setSkillUpArrow] = useState(true);
   const [isLevelUpArrow, setIsLevelUpArrow] = useState(true);
   const [isWorkStatusArrow, setIsWorkStatusUpArrow] = useState(true);
-  const [filterData, setFilterData] = useState([]);
+  const [filterDataDepartment, setFilterDataDepartment] = useState([]);
+  const [filterDataDomain, setFilterDataDomain] = useState([]);
+  const [filterDataLevel, setFilterDataLevel] = useState([]);
+  const [filterDataSkill, setFilterDataSkill] = useState([]);
+  const [filterDataStatus, setFilterDataStatus] = useState([]);
   const [listData, setListData] = useState(dataList);
   const [listDataFilter, setListDataFilter] = useState([]);
 
@@ -40,39 +44,104 @@ function ResourceManage() {
     setIsWorkStatusUpArrow(!isWorkStatusArrow);
   };
 
-  const handelFilter = (e) => {
+  // handleFliterDepartment
+  const handelFilterDepartment = (e) => {
     const value = e.target.value;
     const isChecked = e.target.checked;
     console.log(isChecked);
 
     if (isChecked) {
-      setFilterData([...filterData, value]);
+      setFilterDataDepartment([...filterDataDepartment, value]);
     } else {
-      const filterList = filterData.filter((item) => item != value);
-      setFilterData(filterList);
+      const filterList = filterDataDepartment.filter((item) => item != value);
+      setFilterDataDepartment(filterList);
+    }
+  };
+
+  // handleFilterDomain
+  const handelFilterDomain = (e) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+    console.log(isChecked);
+
+    if (isChecked) {
+      setFilterDataDomain([...filterDataDomain, value]);
+    } else {
+      const filterList = filterDataDomain.filter((item) => item != value);
+      setFilterDataDomain(filterList);
+    }
+  };
+
+  // handleFilterSkill
+  const handleFilterSkill = (e) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+    if (isChecked) {
+      setFilterDataSkill([...filterDataSkill, value]);
+    } else {
+      const filterList = filterDataSkill.filter((item) => item != value);
+      setFilterDataSkill(filterList);
+    }
+  };
+  // handleFilterLevel
+
+  const handleFilterLevel = (e) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+    if (isChecked) {
+      setFilterDataLevel([...filterDataLevel, value]);
+    } else {
+      const filterList = filterDataLevel.filter((item) => item != value);
+      setFilterDataLevel(filterList);
     }
   };
 
   useEffect(() => {
-    if (filterData.length > 0) {
+    if (
+      filterDataDepartment.length > 0 ||
+      filterDataDomain.length > 0 ||
+      filterDataSkill.length > 0 ||
+      filterDataLevel.length > 0
+    ) {
       const listDataNew = dataList.filter((itemData) => {
-        return filterData.every((value) => {
-          return (
-            itemData.department===value ||
-            itemData.domain === value ||
-            itemData.skill1 === value ||
-            itemData.skill2 === value ||
-            itemData.level1 === value ||
-            itemData.level2 === value ||
-            itemData.Work_status === value
-          );
-        });
+        if (
+          filterDataDepartment.length > 0 &&
+          !filterDataDepartment.includes(itemData.department)
+        ) {
+          return false;
+        }
+        if (
+          filterDataDomain.length > 0 &&
+          !filterDataDomain.includes(itemData.domain)
+        ) {
+          return false;
+        }
+        if (
+          filterDataSkill.length > 0 &&
+          !filterDataSkill.includes(itemData.skill1 || itemData.skill2)
+        ) {
+          return false;
+        }
+
+        if (
+          filterDataLevel.length > 0 &&
+          !filterDataLevel.includes(itemData.level1 || itemData.level2)
+        ) {
+          return false;
+        }
+
+        return true;
       });
       setListDataFilter(listDataNew);
     } else {
       setListDataFilter(listData);
     }
-  }, [filterData]);
+  }, [
+    filterDataDepartment,
+    filterDataDomain,
+    filterDataSkill,
+    filterDataLevel,
+  ]);
   return (
     <div className="resource-wrapper">
       {/* Sidebar */}
@@ -106,7 +175,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="DU10"
-                  onChange={handelFilter}
+                  onChange={handelFilterDepartment}
                 />
                 <div className="label">DU10</div>
               </div>
@@ -115,7 +184,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="DU12"
-                  onChange={handelFilter}
+                  onChange={handelFilterDepartment}
                 />
                 <div className="label">DU12</div>
               </div>
@@ -124,7 +193,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="JForce"
-                  onChange={handelFilter}
+                  onChange={handelFilterDepartment}
                 />
                 <div className="label">JForce</div>
               </div>
@@ -133,7 +202,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Takumi"
-                  onChange={handelFilter}
+                  onChange={handelFilterDepartment}
                 />
                 <div className="label">Takumi</div>
               </div>
@@ -166,7 +235,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="BA"
-                  onChange={handelFilter}
+                  onChange={handelFilterDomain}
                 />
                 <div className="label">BA</div>
               </div>
@@ -175,7 +244,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Java"
-                  onChange={handelFilter}
+                  onChange={handelFilterDomain}
                 />
                 <div className="label">Java</div>
               </div>
@@ -184,7 +253,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Test"
-                  onChange={handelFilter}
+                  onChange={handelFilterDomain}
                 />
                 <div className="label">Test</div>
               </div>
@@ -193,7 +262,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Design"
-                  onChange={handelFilter}
+                  onChange={handelFilterDomain}
                 />
                 <div className="label">Design</div>
               </div>
@@ -222,28 +291,58 @@ function ResourceManage() {
           {!isSkillUpArrow && (
             <div className="filter-list">
               <div className="filter-item">
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  value="BA"
+                  onChange={handleFilterSkill}
+                />
                 <div className="label">BA</div>
               </div>
               <div className="filter-item">
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  value="Java"
+                  onChange={handleFilterSkill}
+                />
                 <div className="label">Java</div>
               </div>
               <div className="filter-item">
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  value="Test"
+                  onChange={handleFilterSkill}
+                />
                 <div className="label">Test</div>
               </div>
               <div className="filter-item">
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  value="Design"
+                  onChange={handleFilterSkill}
+                />
                 <div className="label">Design</div>
               </div>
 
               <div className="filter-item">
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  value="PM"
+                  onChange={handleFilterSkill}
+                />
                 <div className="label">PM</div>
               </div>
               <div className="filter-item">
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  value="Brse"
+                  onChange={handleFilterSkill}
+                />
                 <div className="label">Brse</div>
               </div>
             </div>
@@ -276,7 +375,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Sr"
-                  onChange={handelFilter}
+                  onChange={handleFilterLevel}
                 />
                 <div className="label">Sr</div>
               </div>
@@ -285,7 +384,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Ps"
-                  onChange={handelFilter}
+                  onChange={handleFilterLevel}
                 />
                 <div className="label">Ps</div>
               </div>
@@ -294,7 +393,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Md"
-                  onChange={handelFilter}
+                  onChange={handleFilterLevel}
                 />
                 <div className="label">Md</div>
               </div>
@@ -303,7 +402,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Jr"
-                  onChange={handelFilter}
+                  onChange={handleFilterLevel}
                 />
                 <div className="label">Jr</div>
               </div>
@@ -312,7 +411,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Fs"
-                  onChange={handelFilter}
+                  onChange={handleFilterLevel}
                 />
                 <div className="label">Fs</div>
               </div>
@@ -321,7 +420,7 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Ex"
-                  onChange={handelFilter}
+                  onChange={handleFilterLevel}
                 />
                 <div className="label">Ex</div>
               </div>
@@ -355,7 +454,6 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="Active"
-                  onChange={handelFilter}
                 />
                 <div className="label">Active</div>
               </div>
@@ -364,7 +462,6 @@ function ResourceManage() {
                   type="checkbox"
                   className="checkbox-input"
                   value="leave"
-                  onChange={handelFilter}
                 />
                 <div className="label">leave</div>
               </div>
