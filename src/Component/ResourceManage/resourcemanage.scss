@@ -177,6 +177,13 @@
     margin: 0 12px;
     border-style: none;
 }
+input::placeholder {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #CCCCCC;
+  }
 .btn-sufix{
     display: flex;
     align-items: center;
@@ -207,7 +214,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-radius:8px;
+    // border-radius:8px;
     height: 52px;
     width: fit-content;
     background-color: #FFF4E6;
@@ -237,6 +244,7 @@
     flex-direction: row;
     width: fit-content;
     align-items: center;
+    border: 1px solid #D9D9D9;
 }
 
 .table-title__name{
@@ -301,6 +309,33 @@
     height: 64px;
     padding: 20px 16px;
 }
+.item-user-title,
+.item-skill-title,
+.item-department-title,
+.item-domain-title,
+.item-alisa-title{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1D1D1D;
+
+}
+.item-study-title,.item-status-title{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #B56A04;
+}
+
+.item-status-title{
+    color: #0569FF;
+}
+.item-user-title{
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+}
 .item-user{
     display: flex;
     flex-direction: row;
@@ -310,6 +345,9 @@
     height: 64px;
 }
 
+::-webkit-scrollbar {
+    
+  }
 .level{
     font-family: 'Noto Sans JP';
     font-style: normal;
@@ -364,5 +402,70 @@
     backdrop-filter: blur(2px);
     color:#13A3FA;
     border-radius: 5px;
+}
+
+
+//  footer
+.resource-content-footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.resource-content-pagination{
+    display: flex;
+    align-items: center;
+    
+}
+.footer-text{
+    margin-right: 24px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #1D1D1D;
+}
+.footer-pagination{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.pagination-icon-back{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon-arrow-back{
+    width: 24px;
+    height: 24px;
+    border-radius: 40px;
+    background: #FFFFFF;
+}
+
+.pagination-text{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1D1D1D;
+}
+
+.pagination-icon-forward{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon-arrow-forward{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #FFF4E6;
 }
 
