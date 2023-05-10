@@ -1,0 +1,1 @@
+export const dataDepartment =["DU10","DU12","JForce","Takumi"]

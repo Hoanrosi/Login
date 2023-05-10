@@ -1,0 +1,1 @@
+export const dataStatus = ["Active","leave"];

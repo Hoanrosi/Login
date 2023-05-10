@@ -1,0 +1,1 @@
+export const dataDomain = ["BA","Java","Test","Design"];

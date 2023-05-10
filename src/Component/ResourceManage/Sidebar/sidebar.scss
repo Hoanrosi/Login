@@ -1,0 +1,25 @@
+.resource-sidebar{
+    min-height: calc(100vh - 200px);
+    width: 240px;
+    background: #FFF8F0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+}
+
+.sidebar-heading{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.icon-filter{
+    width: 24px;
+    height: 24px;
+}
+.heading{
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
+    font-size: 16px;
+    color: #1D1D1D;
+    margin-left: 12px;
+}

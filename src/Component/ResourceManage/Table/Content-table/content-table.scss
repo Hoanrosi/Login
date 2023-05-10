@@ -1,0 +1,205 @@
+.resource-content-table{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    margin-top: 16px;
+    overflow: scroll;
+}
+
+.table-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 52px;
+    width: fit-content;
+    background-color: #FFF4E6;
+}
+.input-checkbox, .item-title-checkbox{
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid #828282;
+    border-radius: 4px;
+    margin-left: 16px;
+    margin-right: 40px;
+}
+.item-title-heading{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1D1D1D;
+}
+
+.icon-sort{
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+}
+.item-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-title__name{
+    width: 200px;
+}
+.table-title__skill-1{
+    width: 120px;
+}
+.table-title__skill-1{
+    width: 120px;
+}
+
+.table-title__skill-2{
+    width: 120px;
+}
+
+.table-title__department{
+    width: 150px;
+}
+
+.table-title__domain{
+    width: 120px;
+}
+
+.table-title__study{
+    width: 100px;
+    .item-title-heading{
+        width: 48px;
+    }
+}
+.table-title__status{
+    width: 120px;
+    .item-title-heading{
+        width: 46px;
+    }
+
+}
+.table-title__alias-1{
+    width: 110px;
+}
+.table-title__alias-2{
+    width: 110px;
+}
+
+
+.table-content-row{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+    border: 1px solid #D9D9D9;
+}
+
+.item-user-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 64px;
+    padding: 20px 16px;
+}
+.image-user{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 32px;
+    image-rendering: pixelated;
+}
+
+.item-user-title,
+.item-skill-title,
+.item-department-title,
+.item-domain-title,
+.item-alisa-title{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1D1D1D;
+
+}
+
+.item-study-title,.item-status-title{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #B56A04;
+}
+
+.item-status-title{
+    color: #0569FF;
+}
+.item-user-title{
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+}
+.item-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 16px;
+    height: 64px;
+}
+.level{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+
+.level-sr{
+    background: #E8FFFE;
+    border: 1px solid #93D4D1;
+    backdrop-filter: blur(2px);
+    color: #93D4D1;
+    border-radius: 5px;
+}
+
+.level-md{
+    background: #E3CDFE;
+    border: 1px solid #B996E3;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    color: #B996E3;
+}
+
+.level-ps{
+    background: #F0ECE6;
+    border: 1px solid #B7B7B7;
+    backdrop-filter: blur(2px);
+    color:#B7B7B7;
+    border-radius: 5px;
+}
+
+.level-jr{
+    background: #DFFFE8;
+    border: 1px solid #82D198;
+    backdrop-filter: blur(2px);
+    color:#82D198;
+    border-radius: 5px;
+}
+.level-ex{
+    background: #FFC9C9;
+    border: 1px solid #D36F6F;
+    backdrop-filter: blur(2px);
+    color:#D36F6F;
+    border-radius: 5px;
+}
+.level-fs{
+    background: #D6F3FF;
+    border: 1px solid #13A3FA;
+    backdrop-filter: blur(2px);
+    color:#13A3FA;
+    border-radius: 5px;
+}

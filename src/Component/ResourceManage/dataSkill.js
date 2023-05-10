@@ -1,0 +1,1 @@
+export const dataSkill =["BA","Java","Test","Design","PM","Brse"];
