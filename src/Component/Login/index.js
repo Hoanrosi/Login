@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./styles.scss";
 import InputForm from "../InputForm";
 
 function Login(props) {
-  const { handleForgotPassword, handleTransfer } = props;
+  const {  handleTransfer } = props;
   const [formValues, setFormValues] = useState({
     accountName: "",
     password: "",
@@ -39,6 +40,7 @@ function Login(props) {
 
     return isValid;
   };
+
   //============== handleSubmitForm===================
   const handleLogin = (e) => {
     e.preventDefault();
@@ -50,13 +52,13 @@ function Login(props) {
       // Xóa thông báo lỗi
       setFormErrors({});
 
-      handleTransfer()
+      handleTransfer();
     }
   };
 
   return (
     <div className="login">
-      <div className="heading">Login</div>
+      <div className="heading-login">Login</div>
       <div className="form-information">
         <InputForm
           nameLabel=" Account name"
@@ -78,16 +80,13 @@ function Login(props) {
           handleChange={handleChange}
         />
 
-        <div
-          className="forgot-password font-noto"
-          onClick={handleForgotPassword}
-        >
+        <Link to="/forgot-password" className="forgot-password font-noto">
           Forgot password
-        </div>
+        </Link>
       </div>
-      <div className="button font-noto" onClick={handleLogin}>
+      <Link to ="/my-profile" className="button font-noto" onClick={handleLogin}>
         Login
-      </div>
+      </Link>
     </div>
   );
 }

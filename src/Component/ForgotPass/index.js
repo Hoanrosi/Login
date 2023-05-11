@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./style.scss";
 import ErrorMessage from "../Errors";
 import InputForm from "../InputForm";
 
-function ForgotPass({ handleCancel, handleSubmit }) {
+function ForgotPass({ handleSubmit }) {
   const [email, setEmail] = useState("");
   const [formErrors, setFormErrors] = useState({});
 
@@ -56,12 +57,12 @@ function ForgotPass({ handleCancel, handleSubmit }) {
       </div>
 
       <div className="btn-form">
-        <button className="btn btn-cancel" onClick={handleCancel}>
+        <Link to="/" className="btn btn-cancel">
           Cancel
-        </button>
-        <button className="btn btn-send" onClick={handleSend}>
+        </Link>
+        <Link to="/create-password" className="btn btn-send">
           Send
-        </button>
+        </Link>
       </div>
     </div>
   );

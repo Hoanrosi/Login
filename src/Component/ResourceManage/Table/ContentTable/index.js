@@ -1,8 +1,9 @@
 import React from "react";
 import "./content-table.scss";
 import image_user from "../image/image-user.jpg";
-import icon_sort_alt from "../image/bx-sort-alt-2.png"
-function ContentTable({ listDataFilter,dataLevel }) {
+import icon_sort_alt from "../image/bx-sort-alt-2.png";
+import SectionSkill from "../SectionSkill";
+function ContentTable({ listDataFilter, dataLevel }) {
   return (
     <div className="resource-content-table">
       <div className="table-title">
@@ -45,6 +46,13 @@ function ContentTable({ listDataFilter,dataLevel }) {
         </div>
       </div>
       {listDataFilter.map((item, index) => {
+        const levelClass1 = dataLevel.find(
+          (section) => section.level === item.level1
+        )?.classCSS;
+        const levelClass2 = dataLevel.find(
+          (section) => section.level === item.level2
+        )?.classCSS;
+
         return (
           <div className="table-content-row">
             <input type="checkbox" className="item-title-checkbox" />
@@ -52,29 +60,18 @@ function ContentTable({ listDataFilter,dataLevel }) {
               <img src={image_user} className="image-user" />
               <div className="item-user-title">{item.name}</div>
             </div>
+            {/* <SectionSkill itemSkill={item.skill1} itemLevel={item.level1} levelClass={levelClass1} />
+            <SectionSkill itemSkill={item.skill2} itemLevel={item.level2} levelClass={levelClass2} /> */}
 
             <div className="table-title__skill-1 item-user ">
               <div className="item-skill-title"> {item.skill1} </div>
-              <div
-                className={`level ${
-                  dataLevel.find((section) => section.level === item.level1)
-                    ?.classCSS
-                }`}
-              >
-                {item.level1}{" "}
-              </div>
+              <div className={`level ${levelClass1}`}>{item.level1} </div>
             </div>
-            <div className="table-title__skill-2 item-user">
+            <div className="table-title__skill-2 item-user ">
               <div className="item-skill-title"> {item.skill2} </div>
-              <div
-                className={`level ${
-                  dataLevel.find((section) => section.level === item.level2)
-                    ?.classCSS
-                }`}
-              >
-                {item.level2}{" "}
-              </div>
+              <div className={`level ${levelClass2}`}>{item.level2} </div>
             </div>
+
             <div className="table-title__department item-user item-department-title">
               {item.department}
             </div>

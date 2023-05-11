@@ -1,15 +1,15 @@
 import React from "react";
 import "./table.scss";
 import Header from "./Header";
-import ContentTable from "./Content-table";
+import ContentTable from "./ContentTable";
 import Pagination from "./Pagination";
 
-function Table({listDataFilter,dataLevel}) {
+function Table({ listDataFilter, dataLevel, handleSearch }) {
   return (
     <div className="resource-content">
-      <Header />
-      <ContentTable  listDataFilter={listDataFilter} dataLevel={dataLevel}/>
-      <Pagination/>
+      <Header handleSearch={handleSearch} />
+      <ContentTable listDataFilter={listDataFilter} dataLevel={dataLevel} />
+      <Pagination />
     </div>
   );
 }

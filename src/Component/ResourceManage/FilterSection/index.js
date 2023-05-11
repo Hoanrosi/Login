@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./filter.scss";
 import icon_arrow_down from "../image/arrow-chevron-down.png";
 import icon_arrow_up from "../image/arrow-chevron-up.png";
 function FilterSection(props) {
-  const { title, isCollapse, handleClick, handelFilter, options } = props;
+  const { title,options,handelFilter } = props;
+
+  const [isCollapse, setIsCollapse] = useState(true);
+
+  const handleClick = () =>{
+    setIsCollapse(!isCollapse)
+  }
+
   return (
     <div className="sidebar-item">
       <div className="sidebar-item-heading">
@@ -39,7 +46,7 @@ function FilterSection(props) {
           ))}
         </div>
       )}
-      
+
       <div className="sidebar-line"></div>
     </div>
   );

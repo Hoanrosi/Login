@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Routes, Route, BrowserRouter, Switch } from "react-router-dom";
 import AuthenLayout from "./Component/Layout/Authen";
 import AppLayout from "./Component/Layout/AppLayout";
 import Login from "./Component/Login";
@@ -88,9 +89,60 @@ function App() {
   // return <div className="App">{content}</div>;
   return (
     <div className="App">
-      <AppLayout title="Resource Management">
-        <ResourceManage />
-      </AppLayout>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <AuthenLayout>
+                <Login
+                  handleForgotPassword={handleForgotPassword}
+                  handleTransfer={handleTransfer}
+                />
+              </AuthenLayout>
+            }
+          />
+          <Route
+            path="/forgot-password"
+            element={
+              <AuthenLayout>
+                <ForgotPass
+                  handleCancel={handleCancel}
+                  setPageType={setPageType}
+                  handleSubmit={handleSubmit}
+                />
+              </AuthenLayout>
+            }
+          />
+          <Route
+            path="/create-password"
+            element={
+              <AuthenLayout>
+                <NewPassword />
+              </AuthenLayout>
+            }
+          />
+          <Route
+            path="/my-profile"
+            element={
+              <AppLayout
+                title="My Profile"
+                handleResourceManage={handleResourceManage}
+              >
+                <MyProfile />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/resource-manager"
+            element={
+              <AppLayout title="Resource Management">
+                <ResourceManage />
+              </AppLayout>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

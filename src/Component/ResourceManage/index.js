@@ -7,7 +7,7 @@ import icon_arrow_forward_forward from "../image/arrow-chevron- forward forward.
 import Sidebar from "./Sidebar";
 import Table from "./Table";
 import Header from "./Table/Header";
-import ContentTable from "./Table/Content-table";
+import ContentTable from "./Table/ContentTable";
 import Pagination from "./Table/Pagination";
 
 import { dataLevel } from "./dataLevel";
@@ -20,6 +20,7 @@ function ResourceManage() {
   const [filterDataStatus, setFilterDataStatus] = useState([]);
   const [listData, setListData] = useState(dataList);
   const [listDataFilter, setListDataFilter] = useState([]);
+  const [searchName, setSearchName] = useState("");
 
   // handleFliterDepartment
   const handelFilterDepartment = (e) => {
@@ -84,15 +85,36 @@ function ResourceManage() {
       setFilterDataStatus(filterList);
     }
   };
+
+  // ============ handleSearch=================
+  const handleSearch = (e) => {
+    console.log(e.target.value);
+    setSearchName(e.target.value);
+  };
   useEffect(() => {
+    // const dataFilterName = dataList.filter((itemData) => {
+    //   itemData.name.toLowerCase().includes(searchName.toLowerCase());
+    // });
+    // setListDataFilter(dataFilterName);
+
     if (
       filterDataDepartment.length > 0 ||
       filterDataDomain.length > 0 ||
       filterDataSkill.length > 0 ||
       filterDataLevel.length > 0 ||
-      filterDataStatus.length > 0
+      filterDataStatus.length > 0 ||
+      searchName.length > 0
     ) {
       const listDataNew = dataList.filter((itemData) => {
+        if (searchName.length > 0) {
+          const conditionFilterName = itemData.name
+            .toLowerCase()
+            .includes(searchName.toLowerCase());
+          if (!conditionFilterName) {
+            return false;
+          }
+        }
+
         if (
           filterDataDepartment.length > 0 &&
           !filterDataDepartment.includes(itemData.department)
@@ -107,14 +129,20 @@ function ResourceManage() {
         }
         if (
           filterDataSkill.length > 0 &&
-          !filterDataSkill.includes(itemData.skill1 && itemData.skill2)
+          !(
+            filterDataSkill.includes(itemData.skill1) ||
+            filterDataSkill.includes(itemData.skill2)
+          )
         ) {
           return false;
         }
 
         if (
           filterDataLevel.length > 0 &&
-          !filterDataLevel.includes(itemData.level1 && itemData.level2)
+          !(
+            filterDataLevel.includes(itemData.level1) ||
+            filterDataLevel.includes(itemData.level2)
+          )
         ) {
           return false;
         }
@@ -138,6 +166,7 @@ function ResourceManage() {
     filterDataSkill,
     filterDataLevel,
     filterDataStatus,
+    searchName,
   ]);
   return (
     <div className="resource-wrapper">
@@ -147,12 +176,16 @@ function ResourceManage() {
         handelFilterDepartment={handelFilterDepartment}
         handelFilterDomain={handelFilterDomain}
         handleFilterSkill={handleFilterSkill}
-        handleFilterLevel ={handleFilterLevel }
+        handleFilterLevel={handleFilterLevel}
         handleFilterStatus={handleFilterStatus}
       />
 
       {/* Content */}
-      <Table listDataFilter={listDataFilter} dataLevel={dataLevel} />
+      <Table
+        listDataFilter={listDataFilter}
+        dataLevel={dataLevel}
+        handleSearch={handleSearch}
+      />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import icon_search from "../image/bx-search-alt.png";
 import "./header.scss";
 
-function Header() {
+function Header({handleSearch}) {
   return (
     <div className="wrapper-header">
       <div className="resource-content-heading">
@@ -13,7 +13,7 @@ function Header() {
         </div>
       </div>
       <div className="input-suffix">
-          <input placeholder="Search by Name" className="input-search" />
+          <input placeholder="Search by Name" className="input-search" onChange={handleSearch}/>
           <div className="btn-sufix">
             <img src={icon_search} className="icon-search" />
           </div>
