@@ -40,7 +40,7 @@ function ForgotPass({ handleSubmit }) {
 
   return (
     <div className="form-forgotpass">
-      <div className="heading">Forgot password</div>
+      <div className="heading-forgotpass">Forgot password</div>
       <div className="description font-noto">
         Please enter your email address to receive a temporary password.{" "}
       </div>

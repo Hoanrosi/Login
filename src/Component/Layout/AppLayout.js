@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import data from "../data.json";
 import "./app-layout.scss";
 
 function AppLayout({ children, ...props }) {
-  const { title,handleResourceManage } = props;
+  const { title, handleResourceManage } = props;
   console.log(title);
   return (
     <div className="app-layout">
@@ -12,12 +13,12 @@ function AppLayout({ children, ...props }) {
         <div className="item-left">
           <div className="logo font-playfair">MyEC</div>
           <ul className="navbar">
-            <li className="navbar-item font-noto">
-              <a> Dashboard</a>
-            </li>
-            <li className="navbar-item font-noto">
-              <a  onClick={handleResourceManage}> Resource Management</a>
-            </li>
+            <Link to="/dashboard" className="navbar-item font-noto">
+              Dashboard
+            </Link>
+            <Link to="/resource-manager" className="navbar-item font-noto">
+              Resource Management
+            </Link>
             <li className="navbar-item font-noto">
               <a> Learning Activities</a>
             </li>

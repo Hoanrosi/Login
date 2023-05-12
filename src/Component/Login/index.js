@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import InputForm from "../InputForm";
 
 function Login(props) {
-  const {  handleTransfer } = props;
+  const navigate = useNavigate();
+  const handleTransfer = () => {
+    navigate("/my-profile");
+  };
   const [formValues, setFormValues] = useState({
     accountName: "",
     password: "",
@@ -51,7 +55,6 @@ function Login(props) {
 
       // Xóa thông báo lỗi
       setFormErrors({});
-
       handleTransfer();
     }
   };
@@ -84,9 +87,9 @@ function Login(props) {
           Forgot password
         </Link>
       </div>
-      <Link to ="/my-profile" className="button font-noto" onClick={handleLogin}>
+      <div to="/my-profile" className="button font-noto" onClick={handleLogin}>
         Login
-      </Link>
+      </div>
     </div>
   );
 }

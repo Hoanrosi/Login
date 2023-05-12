@@ -4,7 +4,7 @@ import InputForm from "../InputForm";
 function NewPassword({ isPasswordVisible, togglePassword }) {
   return (
     <div className="create-new-password">
-      <div className="heading">Create new password</div>
+      <div className="heading-newpassword">Create new password</div>
       <div className="description">
         We have sent a temporary password to your email. Please check your email
         to get it, then create new password.{" "}
