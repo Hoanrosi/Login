@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./styles.scss";
@@ -55,7 +56,21 @@ function Login(props) {
 
       // Xóa thông báo lỗi
       setFormErrors({});
-      handleTransfer();
+      axios
+        .post("http://192.168.3.114:9001/api/v1/auth/login", {
+          accountName: formValues.accountName,
+          password: formValues.password,
+        })
+        .then((response) => {
+          // Lưu token vào localStorage
+          localStorage.setItem("token", response.data.accessToken);
+          console.log(response.data);
+          console.log(response.data.accessToken);
+          handleTransfer();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
 
@@ -87,7 +102,7 @@ function Login(props) {
           Forgot password
         </Link>
       </div>
-      <div to="/my-profile" className="button font-noto" onClick={handleLogin}>
+      <div className="button font-noto" onClick={handleLogin}>
         Login
       </div>
     </div>
@@ -95,3 +110,5 @@ function Login(props) {
 }
 
 export default Login;
+
+// how can i use token from BE to login into FE

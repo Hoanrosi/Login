@@ -1,0 +1,24 @@
+.wrapper-sidebarlearning{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF8F0;
+    width: 240px;
+    padding: 20px 16px;
+}
+.header-learning{
+    display: flex;
+    margin-bottom: 16px;
+}
+.icon-filter{
+    
+    width: 24px;
+    height: 24px;
+}
+.heading-learning{
+    margin-left: 12px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1D1D1D;
+}

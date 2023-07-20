@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { Routes, Route, BrowserRouter, Switch } from "react-router-dom";
 import AuthenLayout from "./Component/Layout/Authen";
 import AppLayout from "./Component/Layout/AppLayout";
@@ -7,6 +8,9 @@ import ForgotPass from "./Component/ForgotPass";
 import NewPassword from "./Component/NewPassword";
 import MyProfile from "./Component/Profile";
 import ResourceManage from "./Component/ResourceManage";
+import LearningActivity from "./Component/LearningActivities";
+import LayoutAdd from "./Component/LearningActivities/LayoutAdd";
+import LayoutLearning from "./Component/LearningActivities/LayoutLearningActivities";
 import { PAGE_TYPE } from "./variables/variables";
 
 function App() {
@@ -138,6 +142,26 @@ function App() {
             element={
               <AppLayout title="Resource Management">
                 <ResourceManage />
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/learning-activities"
+            element={
+              <AppLayout title="Learning Activities">
+                <LearningActivity>
+                  <LayoutLearning />
+                </LearningActivity>
+              </AppLayout>
+            }
+          />
+          <Route
+            path="/add"
+            element={
+              <AppLayout title="Learning Activities">
+                <LearningActivity>
+                  <LayoutAdd />
+                </LearningActivity>
               </AppLayout>
             }
           />

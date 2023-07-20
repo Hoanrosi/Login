@@ -1,6 +1,8 @@
-import React from "react";
-import data from "../data.json";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import icon from "../image/icon-profile.png";
+import image from "../image/gavi-barca.jpg"
 import "./style.scss";
 import icon_rank from "../image/icons/bx-medal.png";
 import icon_gender from "../image/MyEC_Clone design/icons/bx-profile.png";
@@ -10,6 +12,31 @@ import icon_email from "../image/MyEC_Clone design (3)/icons/Vector.png";
 import icon_check from "../image/arrow-chevron-down.png";
 
 function MyProfile() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+
+        const res = await axios.get(
+          "http://192.168.3.114:9001/api/v1/users/my-profile",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        console.log(res.data,99);
+        setData(res.data);
+      } catch {
+        console.log("error");
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="profile">
       {/* Profile-brief */}
@@ -17,7 +44,7 @@ function MyProfile() {
         <div className="flex-start">
           <div className="profile-brief-top">
             <div className="profile-avata">
-              <img src={data.image} className="profile-image" />
+              <img src={image} className="profile-image" />
               <img src={icon} className="profile-icon-camera" />
             </div>
 

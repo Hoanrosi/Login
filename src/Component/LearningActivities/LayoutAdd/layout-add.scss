@@ -1,0 +1,99 @@
+.ant-breadcrumb-link {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Noto Sans JP;
+    color: #404040;
+  }
+  .layout-add .ant-breadcrumb{
+    margin-top: -8px;
+  }
+  .form-layout-add{
+    position: relative;
+    background-color: White;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .form-layout-add-title{
+    display: flex;
+    align-items: center;
+    .form-add-icon{
+        width:24px;
+        height:24px;
+    }
+    .form-add-heading{
+        font-weight: 500;
+        color:#1D1D1D;
+        font-size: 20px;
+        margin-left: 4px;
+    }
+  }
+
+  .form-layout-add-content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+  .form-add-content-input{
+    display: flex;
+  }
+  .form-add-content-left{
+    display: flex;
+    flex-direction: column;
+    width:650px;
+    margin-right: 20px;
+
+    
+  }
+  .form-add-content-right{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 650px);
+  }
+
+.form-layout-add-description{
+    margin-top: 20px;
+    position: relative;
+}
+  .form-add-description-heading{
+    color:#1D1D1D;
+    font-family: Noto Sans JP;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .ant-input-affix-wrapper:hover {
+    border-color: none;
+  }
+  
+  .form-add-input-descripton{
+    position: relative;
+  }
+  .note-description{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    margin-bottom:14px;
+    margin-right:12px;
+    color:#828282;
+    font-family: Noto Sans JP;
+    font-weight:400;
+    font-size:16px;
+  }
+
+  .form-layout-btn-save{
+    background-color: #FF9505;
+    width:128px;
+    height:48px;
+    padding: 12px 14px;
+    color:#fff;
+    border-radius: 40px;
+    margin-top: 20px;
+    text-align: center;
+    outline: none;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+
+  }

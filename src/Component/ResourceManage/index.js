@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./resourcemanage.scss";
 import icon_arrow_back_back from "../image/arrow-chevron-back back.png";
 import icon_arrow_back from "../image/arrow-chevron-back.png";
@@ -185,6 +186,7 @@ function ResourceManage() {
         listDataFilter={listDataFilter}
         dataLevel={dataLevel}
         handleSearch={handleSearch}
+        filterDataDomain={filterDataDomain}
       />
     </div>
   );

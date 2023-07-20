@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import data from "../data.json";
 import "./app-layout.scss";
 
 function AppLayout({ children, ...props }) {
-  const { title, handleResourceManage } = props;
+  const { title } = props;
+  const [isActive, setIsActive] = useState(false);
+
+  const handleActive = () => {
+    setIsActive(!isActive);
+  };
   console.log(title);
   return (
     <div className="app-layout">
@@ -13,15 +18,24 @@ function AppLayout({ children, ...props }) {
         <div className="item-left">
           <div className="logo font-playfair">MyEC</div>
           <ul className="navbar">
-            <Link to="/dashboard" className="navbar-item font-noto">
-              Dashboard
-            </Link>
-            <Link to="/resource-manager" className="navbar-item font-noto">
-              Resource Management
-            </Link>
-            <li className="navbar-item font-noto">
-              <a> Learning Activities</a>
+            <li>
+              <Link to="/dashboard" className={`navbar-item font-noto`}>
+                Dashboard
+              </Link>
             </li>
+            <li className={`navbar-item  font-noto ${isActive ? "active" : ""}`}>
+              <Link  className="item-link" to="/resource-manager" onClick={handleActive}>
+                Resource Management
+              </Link>
+            </li>
+            <li className={`navbar-item  font-noto ${isActive ? "active" : ""}`}>
+              <Link  className="item-link" to="/learning-activities" onClick={handleActive}>
+              Learning Activities
+              </Link>
+            </li>
+            {/* <li className="navbar-item font-noto">
+              <a> Learning Activities</a>
+            </li> */}
           </ul>
         </div>
 
@@ -37,7 +51,7 @@ function AppLayout({ children, ...props }) {
       {/* Container */}
 
       <div className="container-applayout">
-        <div className="title font-noto">{title}</div>
+        <div className="title-applayout">{title}</div>
         <div>{children}</div>
       </div>
     </div>

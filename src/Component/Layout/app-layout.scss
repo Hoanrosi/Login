@@ -30,6 +30,7 @@
 }
 .item-left{
     display: flex;
+    align-items: center;
 }
 
 .navbar{
@@ -37,19 +38,44 @@
     align-items: center;
     text-decoration: none;
     list-style: none;
+    height: 68px;
     
 }
 
+.active{
+    background: #593502; 
+    
 
+}
+.item-link{
+    
+    text-decoration: none;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffff;
+    text-align: center;
+
+}
+.item-link div{
+    flex: 1;
+}
 .logo{
     margin-right: 32px;
     color: #FFFFFF;
     margin-left: 36px;
 }
 .navbar-item{
-    margin-right: 40px;
+    margin-right: 20px;
     text-decoration: none;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+
 }
 
 .info{
@@ -89,7 +115,9 @@
     
 }
 
-.title{
+.title-applayout{
+    font-family: 'Noto Sans JP';
+    font-style: normal;
     font-weight: 700;
     font-size: 28px;
     color: #6B3F02;

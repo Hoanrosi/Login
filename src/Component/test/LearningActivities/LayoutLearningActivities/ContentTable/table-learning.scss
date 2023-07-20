@@ -1,0 +1,88 @@
+
+.ant-table-wrapper{
+  margin-top: 20px;
+}
+
+  .ant-table-wrapper .ant-table-thead .ant-table-cell {
+        background-color: #FFF4E6;
+  }
+
+  .ant-table-wrapper .ant-table-thead >tr>th {
+    padding: 0px 16px;
+  }
+// .ant-table th,
+// .ant-table td {
+//   width: 150px;
+//   padding: 0 16px;
+// }
+.ant-space-item{
+  color: #1D1D1D;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: Noto Sans JP;
+}
+
+.table-learning-activies,
+.table-domain,
+.table-hostPerformer,
+.table-participants{
+  color: #1D1D1D;
+  font-family: Noto Sans JP;
+  font-weight: 400;
+  font-size:16px;
+  
+}
+
+.table-progress{
+  font-family: Noto Sans JP;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.table-type {
+  color: #1D1D1D;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Noto Sans JP;
+  display:inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: start;
+  
+}
+
+
+.activity-status {
+  font-weight: 500;
+  text-transform: uppercase;
+  &--yellow {
+    color: #FF9505;
+  }
+  &--green{
+    color: #13C735
+  }
+  &--red{
+    color:#FE2E27,
+  }
+  
+}
+
+.activity-progress{
+  font-weight: 500;
+  text-transform: uppercase;
+  &--gray{
+    color:"#828282";
+  }
+  &--red{
+    color:#FE2E27;
+  }
+  &--gray{
+    color:#828282;
+  }
+  &--green{
+    color:#13C735;
+  }
+
+}

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import icon_filter from "../image/bx-filter.png";
 import FilterSection from "../FilterSection";
 import { dataDepartment } from "../dataDepartment";
@@ -16,6 +17,24 @@ function Sidebar(props) {
     handleFilterLevel,
     handleFilterStatus,
   } = props;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const res = await axios.get("http://192.168.3.114:9001/api/v1/users", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        var data = res.data.result;
+        console.log(data, 10000);
+      } catch {
+        console.log("error");
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="resource-sidebar">

@@ -1,0 +1,63 @@
+.resource-content-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.resource-content-pagination {
+  display: flex;
+  align-items: center;
+}
+
+.footer-text {
+  margin-right: 24px;
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #1D1D1D;
+}
+
+.footer-pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination-icon-back {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-arrow-back {
+  width: 24px;
+  height: 24px;
+  border-radius: 40px;
+  background: #FFFFFF;
+}
+
+.pagination-text {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #1D1D1D;
+}
+
+.pagination-icon-forward {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-arrow-forward {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #FFF4E6;
+}/*# sourceMappingURL=pagination.css.map */

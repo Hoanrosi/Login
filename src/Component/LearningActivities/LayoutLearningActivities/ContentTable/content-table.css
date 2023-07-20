@@ -1,0 +1,7 @@
+.table-learning {
+  width: calc(100% - 240px);
+  background-color: #FFFFFF;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=content-table.css.map */
